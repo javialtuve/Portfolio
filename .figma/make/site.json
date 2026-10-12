@@ -1,0 +1,11 @@
+{
+  "title": "JavianaAltuve",
+  "description": "Showcase your work with a customizable portfolio platform designed for creatives and professionals to highlight their skills and attract opportunities.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
