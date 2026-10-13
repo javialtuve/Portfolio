@@ -218,7 +218,6 @@ function CustomCursor() {
 export default function App() {
   const magnetic = useMagnetic(0.4)
   const reduceMotion = useReducedMotion()
-  const [phoneIntroDone, setPhoneIntroDone] = useState(false)
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const heroRef = useRef(null)
@@ -387,14 +386,10 @@ export default function App() {
             className="phone-floor-shadow pointer-events-none absolute left-1/2 top-[83%] z-10 h-8 w-56 -translate-x-1/2 rounded-full"
             animate={reduceMotion
               ? { opacity: 0.32, scale: 1 }
-              : phoneIntroDone
-                ? { opacity: [0.3, 0.18, 0.3, 0.22, 0.3], scale: [1, 0.86, 1, 0.92, 1] }
-                : { opacity: [0, 0.12, 0.36, 0.3], scale: [0.35, 0.7, 1.08, 1] }}
+              : { opacity: [0.3, 0.18, 0.3, 0.22, 0.3], scale: [1, 0.86, 1, 0.92, 1] }}
             transition={reduceMotion
               ? { duration: 0 }
-              : phoneIntroDone
-                ? { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }
-                : { duration: 3.6, times: [0, 0.42, 0.76, 1], ease: [0.16, 1, 0.3, 1] }}
+              : { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }}
           />
 
           {/* Phone */}
@@ -402,33 +397,18 @@ export default function App() {
             initial={false}
             animate={reduceMotion
               ? { opacity: 1, rotateX: 0, rotateY: 0, rotateZ: -6, scale: 1, y: 0 }
-              : phoneIntroDone
-                ? {
-                    opacity: 1,
-                    rotateX: [0, 1, 0, -0.7, 0],
-                    rotateY: [0, -1.8, 0, 1.4, 0],
-                    rotateZ: [-6, -5, -6, -6.7, -6],
-                    scale: [1, 1.006, 1, 0.997, 1],
-                    x: 0,
-                    y: [0, -11, 0, -6, 0],
-                  }
-                : {
-                    opacity: [0, 1, 1, 1],
-                    rotateX: [28, 12, -5, 1, 0],
-                    rotateY: [-74, -38, 14, -5, 0],
-                    rotateZ: [18, 7, -8, -4, -6],
-                    scale: [0.48, 0.72, 1.055, 0.985, 1],
-                    x: [280, 150, -22, 7, 0],
-                    y: [180, 72, -18, 5, 0],
-                  }}
+              : {
+                  opacity: 1,
+                  rotateX: [0, 1, 0, -0.7, 0],
+                  rotateY: [0, -1.8, 0, 1.4, 0],
+                  rotateZ: [-6, -5, -6, -6.7, -6],
+                  scale: [1, 1.006, 1, 0.997, 1],
+                  x: 0,
+                  y: [0, -11, 0, -6, 0],
+                }}
             transition={reduceMotion
               ? { duration: 0.4 }
-              : phoneIntroDone
-                ? { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }
-                : { duration: 3.6, times: [0, 0.28, 0.63, 0.82, 1], ease: [0.16, 1, 0.3, 1] }}
-            onAnimationComplete={() => {
-              if (!reduceMotion && !phoneIntroDone) setPhoneIntroDone(true)
-            }}
+              : { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }}
             className="phone-shell relative z-20 h-[35rem] w-[18rem] rounded-[3.2rem] p-[0.42rem] sm:h-[40rem] sm:w-[20.5rem] md:h-[43rem] md:w-[22rem]"
           >
             <span className="phone-button phone-button-action" />
