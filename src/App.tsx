@@ -385,18 +385,18 @@ export default function App() {
             aria-hidden="true"
             className="phone-floor-shadow pointer-events-none absolute left-1/2 top-[83%] z-10 h-8 w-56 -translate-x-1/2 rounded-full"
             animate={reduceMotion
-              ? { opacity: 0.32, scale: 1 }
-              : { opacity: [0.3, 0.18, 0.3, 0.22, 0.3], scale: [1, 0.86, 1, 0.92, 1] }}
+              ? { opacity: [0.3, 0.27, 0.3], scale: [1, 0.97, 1] }
+              : { opacity: [0.3, 0.18, 0.3], scale: [1, 0.86, 1] }}
             transition={reduceMotion
-              ? { duration: 0 }
-              : { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }}
+              ? { duration: 7, repeat: Infinity, ease: 'easeInOut' }
+              : { duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
           />
 
           {/* Phone */}
           <motion.div
             initial={false}
             animate={reduceMotion
-              ? { opacity: 1, rotateX: 0, rotateY: 0, rotateZ: -6, scale: 1, y: 0 }
+              ? { opacity: 1, rotateX: 0, rotateY: 0, rotateZ: -6, scale: 1, y: [0, -4, 0] }
               : {
                   opacity: 1,
                   rotateX: [0, 1, 0, -0.7, 0],
@@ -404,11 +404,11 @@ export default function App() {
                   rotateZ: [-6, -5, -6, -6.7, -6],
                   scale: [1, 1.006, 1, 0.997, 1],
                   x: 0,
-                  y: [0, -11, 0, -6, 0],
+                  y: [0, -22, 0],
                 }}
             transition={reduceMotion
-              ? { duration: 0.4 }
-              : { duration: 5.8, repeat: Infinity, ease: 'easeInOut' }}
+              ? { duration: 7, repeat: Infinity, ease: 'easeInOut' }
+              : { duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
             className="phone-shell relative z-20 h-[35rem] w-[18rem] rounded-[3.2rem] p-[0.42rem] sm:h-[40rem] sm:w-[20.5rem] md:h-[43rem] md:w-[22rem]"
           >
             <span className="phone-button phone-button-action" />
