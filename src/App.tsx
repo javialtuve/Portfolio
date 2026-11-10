@@ -1,11 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
 import javianaPhoto from './assets/javiana-photo.jpg'
-import heroPhoto from './assets/hero-photo.jpg'
-import altuveShoes2 from './assets/altuve-shoes-2.jpg'
+import heroVideo from './assets/javiana-working.mp4'
+import heroVideoPoster from './assets/javiana-working-poster.jpg'
 import edvanceImg from './assets/edvance-design-system.jpg'
 import physaflowImg from './assets/project3-2.jpg'
-import littleCottonImg from './assets/little-cotton-1.jpg'
-import { motion, useScroll, useTransform, useInView, AnimatePresence, useReducedMotion } from 'framer-motion'
+import littleCottonCover from './assets/little-cotton-case-cover.png'
+import littleCottonFoundations from './assets/little-cotton-case-foundations.png'
+import littleCottonSystem from './assets/little-cotton-case-system.png'
+import littleCottonFlow from './assets/little-cotton-case-flow.png'
+import littleCottonWireframes from './assets/little-cotton-case-wireframes.png'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
@@ -15,20 +19,10 @@ const NAV_LINKS = [
 
 const PROJECTS: {
   id: string; title: string; tags: string[]; year: string; desc: string
-  img: string; localImg?: string; link?: string; linkMobile?: string
+  img: string; localImg?: string; link?: string
 }[] = [
   {
     id: '01',
-    title: 'Altuve Shoes',
-    tags: ['E-commerce', 'UX Research', 'Checkout'],
-    year: '2026',
-    desc: 'Optimización del flujo de compra para una tienda de calzado local. Arquitectura de información en 4 fases —homepage, PDP, checkout y confirmación— que redujo la tasa de abandono del carrito minimizando la sobrecarga cognitiva del usuario.',
-    img: '',
-    localImg: altuveShoes2,
-    link: 'https://www.figma.com/proto/Mp7gRXhRLgEo7Vrmv96u0w/Altuve-Shoes?node-id=3-788&t=dxHTv7rSzb0P1mfL-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A147',
-  },
-  {
-    id: '02',
     title: 'Edvance — Design System',
     tags: ['Design System', 'EdTech', 'Agile'],
     year: '2026',
@@ -38,7 +32,7 @@ const PROJECTS: {
     link: 'https://www.figma.com/proto/ucGv7K1iRJiIINmQK3mHBj/EDVANCE-DESIGN-SYSTEM-EDTECH?node-id=1-10338&t=YDaZuLX7dYTJldP0-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A10295',
   },
   {
-    id: '03',
+    id: '02',
     title: 'Physaflow',
     tags: ['SaaS', 'Dashboard', 'B2B'],
     year: '2026',
@@ -48,15 +42,13 @@ const PROJECTS: {
     link: 'https://www.figma.com/proto/JKVaTHmUt9AX6yV5JyyVDf/PhysaFlow-Calculator?node-id=3-17638&p=f&t=XEUjxoLekMbWFWxT-8&scaling=contain&content-scaling=fixed&page-id=3%3A17066&hide-ui=1',
   },
   {
-    id: '04',
+    id: '03',
     title: 'Little Cotton Dreams',
     tags: ['E-commerce', 'Mobile', 'Conversión'],
     year: '2024',
     desc: 'Landing page de alta conversión para marca de ropa infantil. Arquitectura centrada en el usuario con diseño emocional que conecta con los padres —navegación simplificada, CTAs estratégicos y flujo de checkout de 3 pasos para reducir el abandono de carrito.',
     img: '',
-    localImg: littleCottonImg,
-    link: 'https://www.figma.com/proto/UYzQUyIZY4f7On4zZUeaSB/Little-Cotton-Dreams?node-id=258-183&t=2kRT8z9qdejAd44J-1&scaling=min-zoom&content-scaling=fixed&page-id=17%3A10&starting-point-node-id=258%3A183&show-proto-sidebar=1',
-    linkMobile: 'https://www.figma.com/proto/UYzQUyIZY4f7On4zZUeaSB/Little-Cotton-Dreams?node-id=258-185&p=f&t=gufQiGJXEx6gLOv4-1&scaling=min-zoom&content-scaling=fixed&page-id=17%3A10&starting-point-node-id=258%3A185&show-proto-sidebar=1',
+    localImg: littleCottonCover,
   },
 ]
 
@@ -164,20 +156,129 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
   )
 }
 
-function useMagnetic(strength = 0.4) {
-  const ref = useRef<HTMLAnchorElement>(null)
-  const [offset, setOffset] = useState({ x: 0, y: 0 })
-  const handleMove = (e: React.MouseEvent) => {
-    const el = ref.current
-    if (!el) return
-    const r = el.getBoundingClientRect()
-    setOffset({
-      x: (e.clientX - (r.left + r.width / 2)) * strength,
-      y: (e.clientY - (r.top + r.height / 2)) * strength,
-    })
-  }
-  const handleLeave = () => setOffset({ x: 0, y: 0 })
-  return { ref, offset, handleMove, handleLeave }
+function LittleCottonCaseStudy() {
+  const imageClass = 'block h-auto w-full'
+
+  return (
+    <div className="border-t border-[var(--color-border)] bg-[var(--color-ground)]">
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
+          <span className="mb-5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">
+            Paso 1 · Identidad y concepto
+          </span>
+          <h4 className="max-w-xl text-[clamp(2rem,4vw,4.5rem)] leading-[0.98] tracking-[-0.04em] text-[var(--color-ink)]">
+            Little Cotton Dreams
+          </h4>
+          <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[var(--color-muted)] md:text-base">
+            Identidad de marca y tienda online para ropa de bebé. Logo vectorial en Figma y e-commerce responsive, del concepto al checkout.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-2">
+            {['Branding', 'UX/UI', 'E-commerce', 'Responsive'].map(tag => (
+              <span key={tag} className="border border-[var(--color-border)] px-3 py-1.5 text-[10px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center bg-[#fff8ef] p-5 md:p-10">
+          <img src={littleCottonCover} alt="Portada del proyecto Little Cotton Dreams" className={imageClass} />
+        </div>
+      </div>
+
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="p-6 md:p-12 lg:p-16">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 2</span>
+          <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Fundamentos del proyecto</h4>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Con estos fundamentos definidos, el siguiente paso fue investigar cómo compran hoy los usuarios y qué hace bien la competencia.
+          </p>
+        </div>
+        <div className="border-t border-[var(--color-border)] bg-white p-4 md:p-8 lg:border-l lg:border-t-0">
+          <img src={littleCottonFoundations} alt="Proyecto, objetivo, problema y solución de Little Cotton Dreams" className={imageClass} />
+        </div>
+      </div>
+
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="order-2 border-t border-[var(--color-border)] bg-[#f7f7f7] p-4 md:p-8 lg:order-1 lg:border-r lg:border-t-0">
+          <img src={littleCottonSystem} alt="Colores, tipografía y espaciado del sistema de diseño" className={imageClass} />
+        </div>
+        <div className="order-1 p-6 md:p-12 lg:order-2 lg:p-16">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 3</span>
+          <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Un sistema antes que pantallas</h4>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Antes de diseñar las pantallas, definí colores, tipografía y espaciado. Con esa base construí los componentes para mantener una experiencia coherente desde el inicio hasta la factura.
+          </p>
+        </div>
+      </div>
+
+      <div className="border-b border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 4 · User persona</span>
+            <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">Conocer a Valentina</h4>
+          </div>
+          <div>
+            <p className="text-[15px] leading-relaxed text-[var(--color-ink-soft)] md:text-lg">
+              Para diseñar la tienda necesitaba saber para quién la hacía. Así nació Valentina Torres, una mamá de 24 años en Lima que trabaja medio tiempo y compra ropa para su bebé desde el celular.
+            </p>
+            <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-muted)]">
+              Quiere que su bebé esté cómodo y lindo, pero no sabe qué talla comprar. Le frustran los precios poco claros y le da desconfianza comprar sin ver la tela. Descubre la marca en Instagram, entra a la tienda y finaliza por WhatsApp.
+            </p>
+            <div className="mt-8 grid gap-px border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-2">
+              {['Guía de tallas visible', 'Precios claros', 'Avisos de stock', 'WhatsApp siempre accesible'].map(item => (
+                <div key={item} className="bg-[var(--color-surface)] p-4 text-sm text-[var(--color-ink-soft)]">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="p-6 md:p-12 lg:p-16">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 5</span>
+          <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">De descubrir a confirmar</h4>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Diseñé la tienda para que Valentina pase de descubrir la marca a tener su pedido confirmado en menos de dos minutos, resolviendo en cada paso sus dudas sobre talla, precio, disponibilidad y confianza.
+          </p>
+        </div>
+        <div className="border-t border-[var(--color-border)] bg-[#fff8ef] p-4 md:p-8 lg:border-l lg:border-t-0">
+          <img src={littleCottonFlow} alt="Flujo de compra desde Instagram hasta la factura" className={imageClass} />
+        </div>
+      </div>
+
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="order-2 flex items-center justify-center border-t border-[var(--color-border)] bg-[#202020] p-5 md:p-10 lg:order-1 lg:border-r lg:border-t-0">
+          <img src={littleCottonWireframes} alt="Wireframes móvil y escritorio de la tienda" className="block h-auto max-h-[48rem] max-w-full" />
+        </div>
+        <div className="order-1 p-6 md:p-12 lg:order-2 lg:p-16">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 6</span>
+          <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Estructura antes del detalle</h4>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Antes del diseño visual, dibujé la estructura para decidir qué ve primero el usuario: la marca, el contacto, las categorías y los productos con su precio y disponibilidad. Lo resolví en móvil y escritorio porque cada formato se usa de manera distinta.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-start justify-between gap-8 bg-[linear-gradient(135deg,var(--color-surface),var(--color-accent-deep))] px-6 py-12 md:flex-row md:items-center md:px-12 lg:px-16">
+        <div>
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Producto final</span>
+          <h4 className="mt-3 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Explora la tienda funcionando</h4>
+        </div>
+        <motion.a
+          href="https://littlecottondreams.lovable.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 bg-[var(--color-ink)] px-6 py-3.5 text-xs uppercase tracking-[0.12em] text-[var(--color-ground)]"
+          whileHover={{ scale: 1.03, backgroundColor: 'var(--color-accent-light)' }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Visitar Little Cotton Dreams <span aria-hidden="true">↗</span>
+        </motion.a>
+      </div>
+    </div>
+  )
 }
 
 function CustomCursor() {
@@ -216,24 +317,42 @@ function CustomCursor() {
 }
 
 export default function App() {
-  const magnetic = useMagnetic(0.4)
-  const reduceMotion = useReducedMotion()
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const heroRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   useEffect(() => {
+    const previousRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+
     if (window.location.hash) {
       window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
     }
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    const scrollToStart = () => {
+      document.documentElement.style.scrollBehavior = 'auto'
+      window.scrollTo(0, 0)
+    }
+
+    scrollToStart()
+    const frame = window.requestAnimationFrame(scrollToStart)
+    const timeout = window.setTimeout(() => {
+      scrollToStart()
+      document.documentElement.style.removeProperty('scroll-behavior')
+    }, 150)
+    window.addEventListener('pageshow', scrollToStart)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.clearTimeout(timeout)
+      window.removeEventListener('pageshow', scrollToStart)
+      window.history.scrollRestoration = previousRestoration
+      document.documentElement.style.removeProperty('scroll-behavior')
+    }
   }, [])
 
   // Marquee items
   const marqueeItems = ['UX / UI', 'DISEÑO DE PRODUCTO', 'INVESTIGACIÓN', 'AUTO LAYOUT', 'PROTOTIPADO', 'UX RESEARCH']
+  const selectedProject = PROJECTS.find(project => project.id === activeProject)
 
   return (
     <div className="min-h-screen bg-[var(--color-ground)] text-[var(--color-ink)] [&_*]:cursor-none cursor-none" style={{ fontFamily: 'Manrope, sans-serif' }}>
@@ -307,190 +426,66 @@ export default function App() {
       {/* ── HERO ── */}
       <section
         id="inicio"
-        ref={heroRef}
-        className="hero-scene relative min-h-screen overflow-hidden border-b border-[var(--color-border)] pt-14"
+        className="relative min-h-screen overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-ground)]"
       >
-        <div className="hero-grid absolute inset-0 opacity-30" />
-        <div className="hero-glow absolute left-1/2 top-[47%] h-[68vw] max-h-[54rem] w-[68vw] max-w-[54rem] -translate-x-1/2 -translate-y-1/2 rounded-full" />
-
-        <motion.div
-          className="absolute left-1/2 top-[50%] h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--color-accent-soft)] md:h-[47rem] md:w-[47rem]"
-          animate={reduceMotion ? undefined : { rotate: 360 }}
-          transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-        >
-          <span className="absolute left-[9%] top-[12%] h-2 w-2 rounded-full bg-[var(--color-accent)] shadow-[0_0_24px_var(--color-accent)]" />
-          <span className="absolute bottom-[18%] right-[4%] h-1.5 w-1.5 rounded-full bg-[var(--color-accent-light)] shadow-[0_0_18px_var(--color-accent)]" />
-        </motion.div>
-
-        <motion.div
-          className="relative z-10 mx-auto flex min-h-[calc(100vh-3.5rem)] max-w-[90rem] items-center justify-center px-5 py-14 md:px-12"
-          style={{ y: heroY, opacity: heroOpacity }}
-        >
-          {/* Left product panel */}
-          <motion.div
-            initial={{ opacity: 0, x: -80, rotateY: 25 }}
-            animate={{ opacity: 1, x: 0, rotateY: 12 }}
-            transition={{ delay: 1.15, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-panel absolute left-[4%] top-[27%] hidden h-[25rem] w-[27%] overflow-hidden rounded-3xl border border-[var(--color-accent-soft)] p-5 lg:block"
-          >
-            <div className="mb-7 flex items-center gap-3 border-b border-[var(--color-border)] pb-4">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)] text-xs font-bold text-[var(--color-ground)]">JA</span>
-              <span className="text-xs uppercase tracking-[0.18em] text-[var(--color-muted)]">Portfolio / 2026</span>
-            </div>
-            <p className="mb-2 text-xs uppercase tracking-[0.16em] text-[var(--color-accent-light)]">Diseño con intención</p>
-            <p className="max-w-64 text-3xl leading-tight tracking-[-0.03em] text-[var(--color-ink)]">Mejores experiencias. Impacto real.</p>
-            <div className="relative mt-8 h-28 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)]">
-              <div className="absolute inset-x-5 bottom-5 flex h-16 items-end gap-2">
-                {[35, 58, 42, 83, 62, 96, 74].map((height, index) => (
-                  <motion.span
-                    key={height}
-                    className="flex-1 rounded-t-sm bg-[var(--color-accent)]"
-                    initial={{ height: 0 }}
-                    animate={{ height: `${height}%` }}
-                    transition={{ delay: 1.5 + index * 0.06, duration: 0.55 }}
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right product panel */}
-          <motion.div
-            initial={{ opacity: 0, x: 80, rotateY: -25 }}
-            animate={{ opacity: 1, x: 0, rotateY: -10 }}
-            transition={{ delay: 1.25, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="hero-panel absolute right-[5%] top-[25%] hidden h-[25rem] w-[23%] rounded-3xl border border-[var(--color-accent-soft)] p-5 lg:block"
-          >
-            <div className="mb-5 flex items-center justify-between">
-              <span className="text-xs tracking-[0.08em] text-[var(--color-ink)]">Product design</span>
-              <span className="text-[var(--color-accent-light)]">•••</span>
-            </div>
-            <div className="rounded-2xl bg-[linear-gradient(135deg,var(--color-accent-deep),var(--color-accent))] p-5">
-              <p className="text-xl leading-tight text-white">Explora<br />y descubre</p>
-              <span className="mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white">↗</span>
-            </div>
-            <div className="mt-4 flex items-center gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-4">
-              <span className="h-12 w-12 rounded-xl bg-[var(--color-accent-dim)]" />
-              <span className="flex-1 space-y-2">
-                <span className="block h-1.5 w-4/5 rounded-full bg-[var(--color-muted)]" />
-                <span className="block h-1.5 w-3/5 rounded-full bg-[var(--color-border-strong)]" />
-              </span>
-            </div>
-            <div className="mt-5 flex justify-around text-[var(--color-muted)]">
-              <span className="text-[var(--color-accent)]">◆</span><span>○</span><span>□</span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            aria-hidden="true"
-            className="phone-floor-shadow pointer-events-none absolute left-1/2 top-[83%] z-10 h-8 w-56 -translate-x-1/2 rounded-full"
-            animate={reduceMotion
-              ? { opacity: [0.3, 0.27, 0.3], scale: [1, 0.97, 1] }
-              : { opacity: [0.3, 0.18, 0.3], scale: [1, 0.86, 1] }}
-            transition={reduceMotion
-              ? { duration: 7, repeat: Infinity, ease: 'easeInOut' }
-              : { duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-          />
-
-          {/* Phone */}
-          <motion.div
-            initial={false}
-            animate={reduceMotion
-              ? { opacity: 1, rotateX: 0, rotateY: 0, rotateZ: -6, scale: 1, y: [0, -4, 0] }
-              : {
-                  opacity: 1,
-                  rotateX: [0, 1, 0, -0.7, 0],
-                  rotateY: [0, -1.8, 0, 1.4, 0],
-                  rotateZ: [-6, -5, -6, -6.7, -6],
-                  scale: [1, 1.006, 1, 0.997, 1],
-                  x: 0,
-                  y: [0, -22, 0],
-                }}
-            transition={reduceMotion
-              ? { duration: 7, repeat: Infinity, ease: 'easeInOut' }
-              : { duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="phone-shell relative z-20 h-[35rem] w-[18rem] rounded-[3.2rem] p-[0.42rem] sm:h-[40rem] sm:w-[20.5rem] md:h-[43rem] md:w-[22rem]"
-          >
-            <span className="phone-button phone-button-action" />
-            <span className="phone-button phone-button-volume-up" />
-            <span className="phone-button phone-button-volume-down" />
-            <span className="phone-button phone-button-power" />
-
-            <div className="phone-back absolute inset-[0.42rem] overflow-hidden rounded-[2.8rem] border border-white/10">
-              <div className="phone-back-shine absolute inset-0" />
-              <div className="camera-island absolute left-5 top-5 h-32 w-32 rounded-[2.2rem]">
-                <span className="camera-lens left-3 top-3"><span /></span>
-                <span className="camera-lens bottom-3 left-3"><span /></span>
-                <span className="camera-lens right-3 top-[2.8rem]"><span /></span>
-                <span className="absolute bottom-5 right-5 h-3.5 w-3.5 rounded-full bg-white/70 shadow-[0_0_12px_rgba(255,255,255,0.7)]" />
-                <span className="absolute right-5 top-5 h-2.5 w-2.5 rounded-full bg-[#25142f]" />
-              </div>
-              <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 text-sm font-semibold tracking-[0.12em] text-white/65">
-                JA
-              </div>
-              <p className="absolute inset-x-0 bottom-8 text-center text-[0.52rem] uppercase tracking-[0.3em] text-white/35">
-                Designed by Javiana
+        <div className="grid min-h-screen md:grid-cols-2">
+          <div className="order-2 flex items-center border-t border-[var(--color-border)] px-6 py-14 md:order-1 md:border-r md:border-t-0 md:px-12 lg:px-20">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-xl"
+            >
+              <p className="mb-6 text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">
+                Diseñadora UX/UI
               </p>
-            </div>
+              <h1 className="text-[clamp(3.25rem,7vw,7rem)] leading-[0.88] tracking-[-0.055em] text-[var(--color-ink)]">
+                Javiana
+                <br />
+                Altuve
+              </h1>
+              <span className="my-8 block h-px w-16 bg-[var(--color-accent)]" />
+              <p className="max-w-md text-sm leading-relaxed text-[var(--color-ink-soft)] md:text-base">
+                Diseño productos digitales claros y funcionales para experiencias B2B SaaS y E-commerce.
+              </p>
+              <motion.a
+                href="#trabajos"
+                className="mt-9 inline-flex items-center gap-3 border border-[var(--color-accent)] px-6 py-3 text-xs uppercase tracking-[0.12em] text-[var(--color-accent-light)]"
+                whileHover={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-ink)' }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Ver proyectos <span aria-hidden="true">↓</span>
+              </motion.a>
+            </motion.div>
+          </div>
 
-            <div className="phone-front relative h-full overflow-hidden rounded-[2.8rem] border border-white/10 bg-[var(--color-ground)]">
-              <img src={heroPhoto} alt="Retrato de Javiana Altuve" className="absolute inset-0 h-[56%] w-full object-cover object-top" />
-              <div className="absolute inset-x-0 top-0 h-[58%] bg-[linear-gradient(to_bottom,rgba(8,6,14,0.05),rgba(8,6,14,0.05)_55%,var(--color-ground)_100%)]" />
-              <div className="dynamic-island absolute left-1/2 top-3 h-7 w-24 -translate-x-1/2 rounded-full bg-black shadow-inner md:top-4">
-                <span className="absolute right-2.5 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#121a2d] shadow-[inset_0_0_3px_#4361a0]" />
-              </div>
-              <div className="absolute left-6 right-6 top-5 flex justify-between text-[0.62rem] font-semibold text-white/90">
-                <span>9:41</span><span className="tracking-widest">● ◔ ▰</span>
-              </div>
+          <div className="relative order-1 min-h-[48vh] overflow-hidden md:order-2 md:min-h-0">
+            <video
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              src={heroVideo}
+              poster={heroVideoPoster}
+              style={{ filter: 'saturate(0.62) brightness(0.72) contrast(1.1) hue-rotate(8deg)' }}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="Javiana Altuve trabajando en diseño desde su computador"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[rgba(45,20,68,0.24)] mix-blend-color" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,6,14,0.18),transparent_42%,rgba(8,6,14,0.62))] md:bg-[linear-gradient(to_right,var(--color-ground)_0%,rgba(8,6,14,0.58)_8%,transparent_34%,rgba(8,6,14,0.3)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_100px_rgba(8,6,14,0.42)]" />
+          </div>
+        </div>
 
-              <div className="absolute inset-x-6 bottom-6">
-                <motion.p
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.6 }}
-                  className="mb-1 text-[2rem] leading-none tracking-[-0.04em] text-[var(--color-ink)] md:text-[2.25rem]"
-                >
-                  Javiana Altuve
-                </motion.p>
-                <p className="text-base text-[var(--color-accent-light)]">Diseñadora UX/UI</p>
-                <span className="my-4 block h-px w-11 bg-[var(--color-accent)]" />
-                <p className="text-xs leading-relaxed text-[var(--color-ink-soft)] md:text-sm">
-                  Diseño de productos digitales<br />UX Research · Prototipado en Figma<br />B2B SaaS y E-commerce
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {['Figma', 'UX Research', 'UI Design'].map(label => (
-                    <span key={label} className="rounded-full border border-[var(--color-accent-soft)] bg-[var(--color-panel)] px-3 py-1.5 text-[0.58rem] text-[var(--color-ink-soft)]">
-                      {label}
-                    </span>
-                  ))}
-                </div>
-                <motion.a
-                  ref={magnetic.ref}
-                  href="#trabajos"
-                  aria-label="Ver trabajos"
-                  onMouseMove={magnetic.handleMove}
-                  onMouseLeave={magnetic.handleLeave}
-                  animate={{ x: magnetic.offset.x, y: magnetic.offset.y }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="ml-auto mt-5 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-accent-soft)] bg-[var(--color-accent-dim)] text-xl text-[var(--color-accent-light)]"
-                  whileHover={{ scale: 1.08, backgroundColor: 'var(--color-accent)' }}
-                  whileTap={{ scale: 0.94 }}
-                >
-                  ↘
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.8 }}
-            className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[0.62rem] uppercase tracking-[0.28em] text-[var(--color-muted)]"
-          >
-            Desliza para explorar
-          </motion.p>
-        </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-5 right-6 z-10 hidden whitespace-nowrap text-[0.62rem] uppercase tracking-[0.28em] text-white/70 md:block md:right-12"
+        >
+          Desliza para explorar
+        </motion.p>
       </section>
 
       {/* ── MARQUEE ── */}
@@ -522,105 +517,111 @@ export default function App() {
           <span className="text-[11px] text-[var(--color-muted)]" style={{ fontWeight: 400, letterSpacing: '0.04em' }}>2024–2026</span>
         </div>
 
-        {PROJECTS.map((p, i) => (
-          <FadeUp key={p.id} delay={i * 0.05}>
-            <div
-              className="border-b border-[var(--color-border)] last:border-b-0 group"
-              onClick={() => setActiveProject(activeProject === p.id ? null : p.id)}
+        <div className="grid gap-4 p-6 md:grid-cols-2 md:p-12 xl:grid-cols-3">
+          {PROJECTS.map((project, index) => (
+            <motion.button
+              key={project.id}
+              type="button"
+              onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              whileHover={{ y: -5 }}
+              className={`group overflow-hidden rounded-2xl border text-left transition-colors ${
+                activeProject === project.id
+                  ? 'border-[var(--color-accent)] bg-[var(--color-accent-dim)]'
+                  : 'border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-strong)]'
+              }`}
+              aria-expanded={activeProject === project.id}
             >
-              <motion.div
-                className="grid grid-cols-[2.5rem_1fr_auto] md:grid-cols-[2.5rem_1fr_auto_auto] items-center gap-4 px-6 md:px-12 py-6 cursor-pointer"
-                whileHover={{ backgroundColor: 'var(--color-surface)' }}
-                transition={{ duration: 0.2 }}
-              >
-                <span className="text-[11px] text-[var(--color-muted)] tabular-nums" style={{ fontWeight: 400 }}>{p.id}</span>
+              <div className="flex h-8 items-center gap-1.5 border-b border-[var(--color-border)] px-4">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
+                <span className="ml-auto text-[9px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Archivo {project.id}</span>
+              </div>
+              <div className="relative h-44 overflow-hidden bg-[var(--color-ground)]">
+                <img
+                  src={project.localImg ?? `https://images.unsplash.com/${project.img}?w=800&h=500&fit=crop&auto=format`}
+                  alt={`Vista previa de ${project.title}`}
+                  className="h-full w-full object-cover object-top opacity-75 grayscale transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,rgba(8,6,14,0.78))]" />
+              </div>
+              <div className="p-5">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-xl leading-tight tracking-[-0.025em] text-[var(--color-ink)] md:text-2xl">{project.title}</h3>
+                  <span className="pt-1 text-[10px] text-[var(--color-muted)]">{project.year}</span>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
+                  {activeProject === project.id ? 'Cerrar archivo' : 'Abrir proyecto'}
+                  <span aria-hidden="true">{activeProject === project.id ? '−' : '↘'}</span>
+                </span>
+              </div>
+            </motion.button>
+          ))}
+        </div>
 
-                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
-                  <h3
-                    className="text-[clamp(1.25rem,2.5vw,1.75rem)] group-hover:text-[var(--color-accent)] transition-colors duration-200"
-                    style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
-                  >
-                    {p.title}
-                  </h3>
-                  <div className="flex gap-2 flex-wrap">
-                    {p.tags.map(t => (
-                      <span
-                        key={t}
-                        className="text-[10px] uppercase px-2.5 py-1 border border-[var(--color-border)] text-[var(--color-muted)]"
-                        style={{ fontWeight: 500, letterSpacing: '0.1em' }}
-                      >
-                        {t}
-                      </span>
-                    ))}
+        <AnimatePresence mode="wait">
+          {selectedProject && (
+            <motion.div
+              key={selectedProject.id}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="flex items-center justify-between border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-4 md:px-12">
+                <span className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">
+                  Archivo abierto · {selectedProject.title}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setActiveProject(null)}
+                  className="text-xs uppercase tracking-[0.12em] text-[var(--color-accent-light)] transition-opacity hover:opacity-60"
+                >
+                  Cerrar ×
+                </button>
+              </div>
+
+              {selectedProject.id === '03' ? (
+                <LittleCottonCaseStudy />
+              ) : (
+                <div className="grid border-t border-[var(--color-border)] bg-[var(--color-surface)] md:grid-cols-2">
+                  <div className="flex flex-col justify-between border-b border-[var(--color-border)] p-6 md:border-b-0 md:border-r md:p-12">
+                    <p className="mb-8 text-[15px] leading-relaxed text-[var(--color-muted)]">
+                      {selectedProject.desc}
+                    </p>
+                    <a
+                      href={selectedProject.link ?? '#'}
+                      target={selectedProject.link ? '_blank' : undefined}
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.1em] text-[var(--color-accent)] transition-opacity hover:opacity-70"
+                    >
+                      Ver caso de estudio →
+                    </a>
+                  </div>
+                  <div className="h-72 overflow-hidden md:h-[26rem]">
+                    <img
+                      src={selectedProject.localImg ?? `https://images.unsplash.com/${selectedProject.img}?w=1000&h=700&fit=crop&auto=format`}
+                      alt={selectedProject.title}
+                      className="h-full w-full object-cover object-top"
+                    />
                   </div>
                 </div>
-
-                <span className="hidden md:block text-[12px] text-[var(--color-muted)]" style={{ fontWeight: 400 }}>{p.year}</span>
-
-                <motion.span
-                  animate={{ rotate: activeProject === p.id ? 45 : 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="text-[var(--color-muted)] group-hover:text-[var(--color-accent)] transition-colors text-lg"
-                >
-                  +
-                </motion.span>
-              </motion.div>
-
-              <AnimatePresence>
-                {activeProject === p.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <div className="grid md:grid-cols-2 border-t border-[var(--color-border)]" style={{ backgroundColor: 'var(--color-surface)' }}>
-                      <div className="p-6 md:p-12 border-b md:border-b-0 md:border-r border-[var(--color-border)] flex flex-col justify-between">
-                        <p className="text-[15px] text-[var(--color-muted)] leading-relaxed mb-8" style={{ fontWeight: 400 }}>
-                          {p.desc}
-                        </p>
-                        <div className="flex flex-col gap-3">
-                          <a
-                            href={p.link ?? '#'}
-                            target={p.link ? '_blank' : undefined}
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[13px] text-[var(--color-accent)] hover:opacity-70 transition-opacity uppercase"
-                            style={{ fontWeight: 500, letterSpacing: '0.1em' }}
-                          >
-                            {p.linkMobile ? 'Ver prototipo web' : 'Ver caso de estudio'} →
-                          </a>
-                          {p.linkMobile && (
-                            <a
-                              href={p.linkMobile}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-[13px] text-[var(--color-muted)] hover:text-[var(--color-ink)] transition-colors uppercase"
-                              style={{ fontWeight: 500, letterSpacing: '0.1em' }}
-                            >
-                              Ver prototipo móvil →
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                      <div className="overflow-hidden h-64 md:h-72">
-                        <motion.img
-                          src={p.localImg ?? `https://images.unsplash.com/${p.img}?w=800&h=500&fit=crop&auto=format`}
-                          alt={p.title}
-                          className="w-full h-full object-cover grayscale"
-                          style={{ filter: 'grayscale(100%) brightness(0.75) contrast(1.05)' }}
-                          initial={{ scale: 1.06 }}
-                          animate={{ scale: 1 }}
-                          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </FadeUp>
-        ))}
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* ── SOBRE MÍ ── */}
@@ -636,15 +637,33 @@ export default function App() {
           {/* Bio + foto */}
           <div className="flex flex-col gap-10 p-6 md:p-12">
             <FadeUp>
-              <p
-                className="text-[clamp(1.4rem,3vw,2.25rem)] leading-[1.25] tracking-[-0.015em] text-[var(--color-ink)] mb-8"
+              <h2
+                className="text-[clamp(2rem,4vw,3.75rem)] leading-[1.02] tracking-[-0.035em] text-[var(--color-ink)]"
                 style={{ fontWeight: 400 }}
               >
-                Diseño y construyo interfaces donde la claridad es el oficio — no una ocurrencia tardía.
+                Hola, soy Javiana Altuve.
+              </h2>
+              <p className="mt-5 text-sm tracking-[0.02em] text-[var(--color-accent-light)] md:text-base">
+                Diseñadora UX/UI <span className="text-[var(--color-muted)]">|</span> Experiencias digitales centradas en las personas.
               </p>
-              <p className="text-[15px] text-[var(--color-muted)] leading-relaxed max-w-lg" style={{ fontWeight: 400 }}>
-                Con experiencia desarrollando proyectos de alto impacto que van desde e-commerce optimizados hasta sistemas de diseño escalables y herramientas SaaS complejas (como PhysaFlow y Edvance). Me especializo en traducir problemas de negocio y datos de investigación en experiencias digitales limpias, eficientes y centradas en el usuario. Actualmente disponible para colaborar en equipos de producto o asumir proyectos freelance seleccionados.
-              </p>
+              <span className="my-8 block h-px w-16 bg-[var(--color-accent)]" />
+              <div className="max-w-xl space-y-6">
+                <p className="text-lg leading-relaxed text-[var(--color-ink-soft)]">
+                  Diseño experiencias digitales que convierten necesidades reales en productos claros, intuitivos y visualmente atractivos.
+                </p>
+                <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
+                  Me interesa comprender a las personas, identificar oportunidades y transformar problemas complejos en soluciones sencillas. Combino pensamiento estratégico, creatividad y sensibilidad visual para desarrollar experiencias digitales e identidades visuales que conectan con las personas y aportan valor a las marcas.
+                </p>
+                <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
+                  Disfruto transformar ideas en propuestas visuales que transmitan identidad, claridad y propósito.
+                </p>
+              </div>
+              <a
+                href="#contacto"
+                className="mt-7 inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-[var(--color-accent-light)] transition-opacity hover:opacity-70"
+              >
+                Hablemos y conectemos <span aria-hidden="true">→</span>
+              </a>
             </FadeUp>
 
             <div className="mt-auto overflow-hidden border border-[var(--color-border)]">
@@ -656,9 +675,9 @@ export default function App() {
               >
                 <img
                   src={javianaPhoto}
-                  alt="Javiana Altuve trabajando en diseño de producto"
-                  className="h-72 w-full object-cover object-center md:h-80"
-                  style={{ filter: 'grayscale(100%) contrast(1.08) brightness(0.8)', display: 'block' }}
+                  alt="Retrato de Javiana Altuve"
+                  className="h-80 w-full object-cover object-center md:h-[28rem]"
+                  style={{ filter: 'grayscale(85%) contrast(1.06) brightness(0.78)', display: 'block' }}
                 />
               </motion.div>
             </div>
@@ -670,22 +689,22 @@ export default function App() {
               <p className="text-[11px] uppercase text-[var(--color-muted)] mb-5" style={{ fontWeight: 500, letterSpacing: '0.13em' }}>
                 Herramientas
               </p>
-              <div className="flex flex-col">
+              <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
                 {STACK.map((item, i) => (
                   <motion.div
                     key={item}
-                    initial={{ opacity: 0, x: -8 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.04, duration: 0.4 }}
-                    whileHover={{ x: 6, color: 'var(--color-accent)' }}
-                    className="flex items-center gap-3 border-b border-[var(--color-border)] py-3 text-[14px] text-[var(--color-ink)] transition-colors"
+                    whileHover={{ y: -3, borderColor: 'var(--color-accent-soft)' }}
+                    className="flex min-h-32 flex-col justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-[14px] text-[var(--color-ink)]"
                     style={{ fontWeight: 400 }}
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-accent-dim)] text-[var(--color-accent-light)]">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-accent-soft)] bg-[var(--color-accent-dim)] text-[var(--color-accent-light)]">
                       <ToolIcon name={item} />
                     </span>
-                    <span>{item}</span>
+                    <span className="mt-5 leading-tight">{item}</span>
                   </motion.div>
                 ))}
               </div>
