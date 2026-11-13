@@ -52,6 +52,21 @@ body {
   background: var(--color-accent-soft);
 }
 
+.custom-cursor {
+  display: none;
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+
+  .cursor-experience,
+  .cursor-experience * {
+    cursor: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

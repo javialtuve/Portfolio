@@ -3,7 +3,25 @@ import javianaPhoto from './assets/javiana-photo.jpg'
 import heroVideo from './assets/javiana-working.mp4'
 import heroVideoPoster from './assets/javiana-working-poster.jpg'
 import edvanceImg from './assets/edvance-design-system.jpg'
-import physaflowImg from './assets/project3-2.jpg'
+import physaflowCover from './assets/physaflow-case-cover.png'
+import physaflowTypography from './assets/physaflow-case-typography.png'
+import physaflowColors from './assets/physaflow-case-colors.png'
+import physaflowGrid from './assets/physaflow-case-grid.png'
+import physaflowBrief from './assets/physaflow-case-brief.png'
+import physaflowTerminology from './assets/physaflow-case-terminology.png'
+import physaflowInspiration from './assets/physaflow-case-inspiration.png'
+import physaflowInterview from './assets/physaflow-case-interview.png'
+import physaflowResearch from './assets/physaflow-case-research.png'
+import physaflowDocumentation1 from './assets/physaflow-case-documentation-1.png'
+import physaflowDocumentation2 from './assets/physaflow-case-documentation-2.png'
+import physaflowDocumentation3 from './assets/physaflow-case-documentation-3.png'
+import physaflowDocumentation4 from './assets/physaflow-case-documentation-4.png'
+import physaflowDocumentation5 from './assets/physaflow-case-documentation-5.png'
+import physaflowDocumentation6 from './assets/physaflow-case-documentation-6.png'
+import physaflowComponents from './assets/physaflow-case-components.png'
+import physaflowFields from './assets/physaflow-case-fields.png'
+import physaflowUxWriting from './assets/physaflow-case-ux-writing.png'
+import physaflowCompleteFlow from './assets/physaflow-case-complete-flow.png'
 import littleCottonCover from './assets/little-cotton-case-cover.png'
 import littleCottonFoundations from './assets/little-cotton-case-foundations.png'
 import littleCottonSystem from './assets/little-cotton-case-system.png'
@@ -38,8 +56,8 @@ const PROJECTS: {
     year: '2026',
     desc: 'Calculadora de capacidad ociosa para data centers. El usuario ingresa 3 datos —tamaño de instalación, utilización actual y tipo de enfriamiento— y obtiene en menos de 3 minutos una estimación instantánea de la capacidad varada y su costo anual potencial.',
     img: '',
-    localImg: physaflowImg,
-    link: 'https://www.figma.com/proto/JKVaTHmUt9AX6yV5JyyVDf/PhysaFlow-Calculator?node-id=3-17638&p=f&t=XEUjxoLekMbWFWxT-8&scaling=contain&content-scaling=fixed&page-id=3%3A17066&hide-ui=1',
+    localImg: physaflowCover,
+    link: 'https://physaflowcalculator.lovable.app',
   },
   {
     id: '03',
@@ -164,7 +182,7 @@ function LittleCottonCaseStudy() {
       <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.8fr_1.2fr]">
         <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
           <span className="mb-5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">
-            Paso 1 · Identidad y concepto
+            Identidad y concepto
           </span>
           <h4 className="max-w-xl text-[clamp(2rem,4vw,4.5rem)] leading-[0.98] tracking-[-0.04em] text-[var(--color-ink)]">
             Little Cotton Dreams
@@ -187,7 +205,7 @@ function LittleCottonCaseStudy() {
 
       <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.7fr_1.3fr]">
         <div className="p-6 md:p-12 lg:p-16">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 2</span>
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Fundamentos</span>
           <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Fundamentos del proyecto</h4>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
             Con estos fundamentos definidos, el siguiente paso fue investigar cómo compran hoy los usuarios y qué hace bien la competencia.
@@ -203,7 +221,7 @@ function LittleCottonCaseStudy() {
           <img src={littleCottonSystem} alt="Colores, tipografía y espaciado del sistema de diseño" className={imageClass} />
         </div>
         <div className="order-1 p-6 md:p-12 lg:order-2 lg:p-16">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 3</span>
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Sistema visual</span>
           <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Un sistema antes que pantallas</h4>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
             Antes de diseñar las pantallas, definí colores, tipografía y espaciado. Con esa base construí los componentes para mantener una experiencia coherente desde el inicio hasta la factura.
@@ -214,7 +232,7 @@ function LittleCottonCaseStudy() {
       <div className="border-b border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 4 · User persona</span>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">User persona</span>
             <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">Conocer a Valentina</h4>
           </div>
           <div>
@@ -237,7 +255,7 @@ function LittleCottonCaseStudy() {
 
       <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
         <div className="p-6 md:p-12 lg:p-16">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 5</span>
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Flujo de compra</span>
           <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">De descubrir a confirmar</h4>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
             Diseñé la tienda para que Valentina pase de descubrir la marca a tener su pedido confirmado en menos de dos minutos, resolviendo en cada paso sus dudas sobre talla, precio, disponibilidad y confianza.
@@ -253,7 +271,7 @@ function LittleCottonCaseStudy() {
           <img src={littleCottonWireframes} alt="Wireframes móvil y escritorio de la tienda" className="block h-auto max-h-[48rem] max-w-full" />
         </div>
         <div className="order-1 p-6 md:p-12 lg:order-2 lg:p-16">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Paso 6</span>
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Wireframes</span>
           <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">Estructura antes del detalle</h4>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
             Antes del diseño visual, dibujé la estructura para decidir qué ve primero el usuario: la marca, el contacto, las categorías y los productos con su precio y disponibilidad. Lo resolví en móvil y escritorio porque cada formato se usa de manera distinta.
@@ -277,6 +295,194 @@ function LittleCottonCaseStudy() {
           Visitar Little Cotton Dreams <span aria-hidden="true">↗</span>
         </motion.a>
       </div>
+    </div>
+  )
+}
+
+function PhysaflowCaseStudy({ prototypeUrl }: { prototypeUrl?: string }) {
+  const imageClass = 'block h-auto w-full'
+
+  const researchItems = [
+    {
+      image: physaflowBrief,
+      label: 'Brief y alcance',
+      alt: 'Descripción del proyecto, desafío y entregables de PhysaFlow',
+    },
+    {
+      image: physaflowTerminology,
+      label: 'Terminología',
+      alt: 'Definición de conceptos técnicos utilizados en PhysaFlow',
+    },
+    {
+      image: physaflowInspiration,
+      label: 'Benchmark visual',
+      alt: 'Referencias de calculadoras y visualizaciones analizadas',
+    },
+    {
+      image: physaflowInterview,
+      label: 'Entrevista cualitativa',
+      alt: 'Guion de entrevista para operadores de data centers',
+    },
+    {
+      image: physaflowResearch,
+      label: 'Desk research',
+      alt: 'Documentación de investigación de escritorio para PhysaFlow',
+    },
+  ]
+
+  const documentationItems = [
+    { image: physaflowDocumentation1, label: 'User personas', alt: 'Personas primaria y secundaria de PhysaFlow' },
+    { image: physaflowDocumentation2, label: 'Jerarquía y journey', alt: 'Jerarquía de usuarios y resumen del user journey' },
+    { image: physaflowDocumentation3, label: 'Journey map', alt: 'Journey map, pain points y oportunidades de mejora' },
+    { image: physaflowDocumentation4, label: 'User flow', alt: 'Diagrama del flujo de usuario de PhysaFlow' },
+    { image: physaflowDocumentation5, label: 'Análisis de descubrimiento', alt: 'Notas del flujo y análisis profundo de descubrimiento' },
+    { image: physaflowDocumentation6, label: 'Principios de diseño', alt: 'Riesgos y principios de diseño derivados de la investigación' },
+  ]
+
+  return (
+    <div className="border-t border-[var(--color-border)] bg-[var(--color-ground)]">
+      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
+          <span className="mb-5 text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Presentación</span>
+          <h4 className="text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] tracking-[-0.045em] text-[var(--color-ink)]">
+            PhysaFlow
+          </h4>
+          <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[var(--color-muted)] md:text-base">
+            Calculadora de capacidad ociosa para data centers. Convierte tres datos esenciales en una estimación inmediata de capacidad desaprovechada y su impacto financiero anual.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-2">
+            {['B2B SaaS', 'Data centers', 'UX Research', 'Dashboard'].map(tag => (
+              <span key={tag} className="border border-[var(--color-border)] px-3 py-1.5 text-[10px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center bg-[#0d382b]">
+          <img src={physaflowCover} alt="Portada de PhysaFlow y formulario de la calculadora" className={imageClass} />
+        </div>
+      </div>
+
+      <div className="border-b border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
+        <div className="mb-10 max-w-3xl">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Sistema visual</span>
+          <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">El sistema visual</h4>
+          <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Definí tipografía, color y retícula antes de diseñar las pantallas. Esta base mantiene clara la información técnica y garantiza consistencia entre escritorio y móvil.
+          </p>
+        </div>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <figure className="overflow-hidden border border-[var(--color-border)] bg-[#f4f4f4]">
+            <img src={physaflowTypography} alt="Escala tipográfica Inter de PhysaFlow" className={imageClass} />
+            <figcaption className="border-t border-black/10 bg-white px-4 py-3 text-xs text-black/60">Tipografía · Inter</figcaption>
+          </figure>
+          <figure className="overflow-hidden border border-[var(--color-border)] bg-white">
+            <img src={physaflowColors} alt="Paleta de colores base, soporte y escala de grises" className={imageClass} />
+            <figcaption className="border-t border-black/10 px-4 py-3 text-xs text-black/60">Color · Forest green y gold</figcaption>
+          </figure>
+          <figure className="overflow-hidden border border-[var(--color-border)] bg-[#3d3d3d] lg:col-span-2">
+            <img src={physaflowGrid} alt="Retículas responsive para escritorio y móvil" className={imageClass} />
+            <figcaption className="border-t border-white/10 px-4 py-3 text-xs text-white/55">Retícula · Desktop 1440 px y mobile 375 px</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div className="px-6 py-14 md:px-12 md:py-20 lg:px-16">
+        <div className="mb-10 grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Research y documentación</span>
+            <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">Entender y documentar antes de diseñar</h4>
+          </div>
+          <p className="text-[15px] leading-relaxed text-[var(--color-muted)] md:text-base">
+            La investigación y la documentación reúnen el desafío, el lenguaje técnico, los referentes, las entrevistas, las personas, los journeys y los principios de diseño. Todo forma una secuencia continua que transforma hallazgos en decisiones.
+          </p>
+        </div>
+
+        <div className="grid items-start gap-5 md:grid-cols-2">
+          {[...researchItems, ...documentationItems].map((item, index, items) => (
+            <motion.figure
+              key={item.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ delay: index * 0.05, duration: 0.5 }}
+              className={`overflow-hidden border border-[var(--color-border)] bg-[#dedede] ${index === items.length - 1 ? 'md:col-span-2 md:mx-auto md:max-w-3xl' : ''}`}
+            >
+              <div className="border-b border-black/10 bg-[#202020] px-4 py-2.5 text-[10px] uppercase tracking-[0.14em] text-white/65">
+                {item.label}
+              </div>
+              <img src={item.image} alt={item.alt} className={imageClass} />
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
+        <div className="mb-10 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Sistema de componentes</span>
+            <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">Estados que se entienden</h4>
+          </div>
+          <p className="text-[15px] leading-relaxed text-[var(--color-muted)] md:text-base">
+            Documenté iconos, selectores, campos y botones en sus estados principales. El sistema mantiene la calculadora consistente y permite comunicar selección, validación, error y disponibilidad sin ambigüedad.
+          </p>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-2">
+          <figure className="overflow-hidden border border-[var(--color-border)] bg-[#202020]">
+            <img src={physaflowComponents} alt="Iconos, botones y selectores de tipo de enfriamiento" className={imageClass} />
+            <figcaption className="border-t border-white/10 px-4 py-3 text-xs text-white/55">Iconos, botones y selección</figcaption>
+          </figure>
+          <figure className="overflow-hidden border border-[var(--color-border)] bg-[#454545]">
+            <img src={physaflowFields} alt="Campos de entrada y estados de botones de PhysaFlow" className={imageClass} />
+            <figcaption className="border-t border-white/10 px-4 py-3 text-xs text-white/55">Inputs, validación y estados</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div className="grid border-t border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="p-6 md:p-12 lg:p-16">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">UX Writing</span>
+          <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">Claridad en el momento clave</h4>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[var(--color-muted)]">
+            Definí el contenido del resultado inmediato en inglés y español. El mensaje explica la capacidad desaprovechada, el impacto anual estimado y las siguientes acciones sin exigir registro previo.
+          </p>
+        </div>
+        <div className="flex items-center border-t border-[var(--color-border)] bg-[#202020] p-4 md:p-8 lg:border-l lg:border-t-0">
+          <img src={physaflowUxWriting} alt="Documento bilingüe de UX Writing para el resultado inmediato" className="mx-auto block h-auto max-h-[58rem] max-w-full" />
+        </div>
+      </div>
+
+      <div className="border-t border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
+        <div className="mb-10 max-w-3xl">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Flujo completo</span>
+          <h4 className="mt-4 text-3xl tracking-[-0.035em] text-[var(--color-ink)] md:text-5xl">De los datos al análisis</h4>
+          <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-muted)]">
+            El flujo conecta la captura inicial, el resultado inmediato, la solicitud opcional de correo y el análisis profundo. Las versiones móvil y escritorio conservan la misma prioridad de información.
+          </p>
+        </div>
+        <figure className="overflow-hidden border border-[var(--color-border)] bg-[#454545] p-3 md:p-6">
+          <img src={physaflowCompleteFlow} alt="Flujo completo responsive de la calculadora PhysaFlow" className="mx-auto block h-auto max-h-[64rem] max-w-full" />
+        </figure>
+      </div>
+
+      {prototypeUrl && (
+        <div className="flex flex-col items-start justify-between gap-8 border-t border-[var(--color-border)] bg-[linear-gradient(135deg,#102f27,#173f31)] px-6 py-12 md:flex-row md:items-center md:px-12 lg:px-16">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Producto publicado</span>
+            <h4 className="mt-3 text-2xl tracking-[-0.025em] text-white md:text-3xl">Prueba la calculadora PhysaFlow</h4>
+          </div>
+          <motion.a
+            href={prototypeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#c9a445] px-6 py-3.5 text-xs uppercase tracking-[0.12em] text-[#102f27]"
+            whileHover={{ scale: 1.03, backgroundColor: '#e1c370' }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Abrir calculadora <span aria-hidden="true">↗</span>
+          </motion.a>
+        </div>
+      )}
     </div>
   )
 }
@@ -307,7 +513,7 @@ function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
+      className="custom-cursor pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
       animate={{ x: pos.x - 8, y: pos.y - 8, scale: hovered ? 3 : 1 }}
       transition={{ type: 'spring', stiffness: 500, damping: 30, mass: 0.5 }}
     >
@@ -352,10 +558,9 @@ export default function App() {
 
   // Marquee items
   const marqueeItems = ['UX / UI', 'DISEÑO DE PRODUCTO', 'INVESTIGACIÓN', 'AUTO LAYOUT', 'PROTOTIPADO', 'UX RESEARCH']
-  const selectedProject = PROJECTS.find(project => project.id === activeProject)
 
   return (
-    <div className="min-h-screen bg-[var(--color-ground)] text-[var(--color-ink)] [&_*]:cursor-none cursor-none" style={{ fontFamily: 'Manrope, sans-serif' }}>
+    <div className="cursor-experience min-h-screen bg-[var(--color-ground)] text-[var(--color-ink)]" style={{ fontFamily: 'Manrope, sans-serif' }}>
       <CustomCursor />
 
       {/* ── NAV ── */}
@@ -517,111 +722,118 @@ export default function App() {
           <span className="text-[11px] text-[var(--color-muted)]" style={{ fontWeight: 400, letterSpacing: '0.04em' }}>2024–2026</span>
         </div>
 
-        <div className="grid gap-4 p-6 md:grid-cols-2 md:p-12 xl:grid-cols-3">
+        <div className="space-y-5 p-6 md:p-12">
           {PROJECTS.map((project, index) => (
-            <motion.button
+            <motion.div
               key={project.id}
-              type="button"
-              onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className={`group overflow-hidden rounded-2xl border text-left transition-colors ${
+              className={`overflow-hidden rounded-2xl border transition-colors ${
                 activeProject === project.id
-                  ? 'border-[var(--color-accent)] bg-[var(--color-accent-dim)]'
-                  : 'border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-strong)]'
+                  ? 'border-[var(--color-accent)]'
+                  : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)]'
               }`}
-              aria-expanded={activeProject === project.id}
             >
-              <div className="flex h-8 items-center gap-1.5 border-b border-[var(--color-border)] px-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
-                <span className="ml-auto text-[9px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Archivo {project.id}</span>
-              </div>
-              <div className="relative h-44 overflow-hidden bg-[var(--color-ground)]">
-                <img
-                  src={project.localImg ?? `https://images.unsplash.com/${project.img}?w=800&h=500&fit=crop&auto=format`}
-                  alt={`Vista previa de ${project.title}`}
-                  className="h-full w-full object-cover object-top opacity-75 grayscale transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,rgba(8,6,14,0.78))]" />
-              </div>
-              <div className="p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl leading-tight tracking-[-0.025em] text-[var(--color-ink)] md:text-2xl">{project.title}</h3>
-                  <span className="pt-1 text-[10px] text-[var(--color-muted)]">{project.year}</span>
+              <button
+                type="button"
+                onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
+                className="group block w-full bg-[var(--color-surface)] text-left"
+                aria-expanded={activeProject === project.id}
+              >
+                <div className="flex h-8 items-center gap-1.5 border-b border-[var(--color-border)] px-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
+                  <span className="ml-auto text-[9px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Archivo {project.id}</span>
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
-                      {tag}
+                <div className="grid md:grid-cols-[0.72fr_1.28fr]">
+                  <div className="relative h-48 overflow-hidden bg-[var(--color-ground)] md:h-60">
+                    <img
+                      src={project.localImg ?? `https://images.unsplash.com/${project.img}?w=800&h=500&fit=crop&auto=format`}
+                      alt={`Vista previa de ${project.title}`}
+                      className="h-full w-full object-cover object-top opacity-75 grayscale transition-all duration-500 group-hover:scale-[1.025] group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_60%,rgba(8,6,14,0.68))]" />
+                  </div>
+                  <div className="flex flex-col justify-between border-t border-[var(--color-border)] p-5 md:border-l md:border-t-0 md:p-8">
+                    <div>
+                      <div className="flex items-start justify-between gap-4">
+                        <h3 className="text-2xl leading-tight tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">{project.title}</h3>
+                        <span className="pt-1 text-[10px] text-[var(--color-muted)]">{project.year}</span>
+                      </div>
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {project.tags.map(tag => (
+                          <span key={tag} className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
+                      {activeProject === project.id ? 'Cerrar archivo' : 'Abrir proyecto'}
+                      <span aria-hidden="true">{activeProject === project.id ? '−' : '↘'}</span>
                     </span>
-                  ))}
+                  </div>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
-                  {activeProject === project.id ? 'Cerrar archivo' : 'Abrir proyecto'}
-                  <span aria-hidden="true">{activeProject === project.id ? '−' : '↘'}</span>
-                </span>
-              </div>
-            </motion.button>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {activeProject === project.id && (
+                  <motion.div
+                    key={`${project.id}-detail`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex items-center justify-between border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-4 md:px-12">
+                      <span className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">
+                        Archivo abierto · {project.title}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setActiveProject(null)}
+                        className="text-xs uppercase tracking-[0.12em] text-[var(--color-accent-light)] transition-opacity hover:opacity-60"
+                      >
+                        Cerrar ×
+                      </button>
+                    </div>
+
+                    {project.id === '03' ? (
+                      <LittleCottonCaseStudy />
+                    ) : project.id === '02' ? (
+                      <PhysaflowCaseStudy prototypeUrl={project.link} />
+                    ) : (
+                      <div className="grid border-t border-[var(--color-border)] bg-[var(--color-surface)] md:grid-cols-2">
+                        <div className="flex flex-col justify-between border-b border-[var(--color-border)] p-6 md:border-b-0 md:border-r md:p-12">
+                          <p className="mb-8 text-[15px] leading-relaxed text-[var(--color-muted)]">{project.desc}</p>
+                          <a
+                            href={project.link ?? '#'}
+                            target={project.link ? '_blank' : undefined}
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.1em] text-[var(--color-accent)] transition-opacity hover:opacity-70"
+                          >
+                            Ver caso de estudio →
+                          </a>
+                        </div>
+                        <div className="h-72 overflow-hidden md:h-[26rem]">
+                          <img
+                            src={project.localImg ?? `https://images.unsplash.com/${project.img}?w=1000&h=700&fit=crop&auto=format`}
+                            alt={project.title}
+                            className="h-full w-full object-cover object-top"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
-
-        <AnimatePresence mode="wait">
-          {selectedProject && (
-            <motion.div
-              key={selectedProject.id}
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-              className="overflow-hidden"
-            >
-              <div className="flex items-center justify-between border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-4 md:px-12">
-                <span className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">
-                  Archivo abierto · {selectedProject.title}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setActiveProject(null)}
-                  className="text-xs uppercase tracking-[0.12em] text-[var(--color-accent-light)] transition-opacity hover:opacity-60"
-                >
-                  Cerrar ×
-                </button>
-              </div>
-
-              {selectedProject.id === '03' ? (
-                <LittleCottonCaseStudy />
-              ) : (
-                <div className="grid border-t border-[var(--color-border)] bg-[var(--color-surface)] md:grid-cols-2">
-                  <div className="flex flex-col justify-between border-b border-[var(--color-border)] p-6 md:border-b-0 md:border-r md:p-12">
-                    <p className="mb-8 text-[15px] leading-relaxed text-[var(--color-muted)]">
-                      {selectedProject.desc}
-                    </p>
-                    <a
-                      href={selectedProject.link ?? '#'}
-                      target={selectedProject.link ? '_blank' : undefined}
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.1em] text-[var(--color-accent)] transition-opacity hover:opacity-70"
-                    >
-                      Ver caso de estudio →
-                    </a>
-                  </div>
-                  <div className="h-72 overflow-hidden md:h-[26rem]">
-                    <img
-                      src={selectedProject.localImg ?? `https://images.unsplash.com/${selectedProject.img}?w=1000&h=700&fit=crop&auto=format`}
-                      alt={selectedProject.title}
-                      className="h-full w-full object-cover object-top"
-                    />
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </section>
 
       {/* ── SOBRE MÍ ── */}
