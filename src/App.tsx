@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react'
 import javianaPhoto from './assets/javiana-photo.jpg'
 import heroVideo from './assets/javiana-working.mp4'
 import heroVideoPoster from './assets/javiana-working-poster.jpg'
-import edvanceImg from './assets/edvance-design-system.jpg'
 import physaflowCover from './assets/physaflow-case-cover.png'
 import physaflowTypography from './assets/physaflow-case-typography.png'
 import physaflowColors from './assets/physaflow-case-colors.png'
@@ -37,20 +36,10 @@ const NAV_LINKS = [
 
 const PROJECTS: {
   id: string; title: string; tags: string[]; year: string; desc: string
-  img: string; localImg?: string; link?: string
+  img: string; localImg?: string; link?: string; siteLink?: string; siteLabel?: string
 }[] = [
   {
     id: '01',
-    title: 'Edvance — Design System',
-    tags: ['Design System', 'EdTech', 'Agile'],
-    year: '2026',
-    desc: 'Sistema de diseño integral para plataformas EdTech desarrollado en simulación laboral Agile (No Country). Estandarización de componentes y tokens que eliminó la fragmentación visual, redujo el retrabajo y aceleró el ciclo de entrega diseño–desarrollo.',
-    img: '',
-    localImg: edvanceImg,
-    link: 'https://www.figma.com/proto/ucGv7K1iRJiIINmQK3mHBj/EDVANCE-DESIGN-SYSTEM-EDTECH?node-id=1-10338&t=YDaZuLX7dYTJldP0-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A10295',
-  },
-  {
-    id: '02',
     title: 'Physaflow',
     tags: ['SaaS', 'Dashboard', 'B2B'],
     year: '2026',
@@ -58,15 +47,19 @@ const PROJECTS: {
     img: '',
     localImg: physaflowCover,
     link: 'https://physaflowcalculator.lovable.app',
+    siteLink: 'https://physaflowcalculator.lovable.app',
+    siteLabel: 'Ir al sitio web',
   },
   {
-    id: '03',
+    id: '02',
     title: 'Little Cotton Dreams',
-    tags: ['E-commerce', 'Mobile', 'Conversión'],
+    tags: ['E-commerce', 'Wireframes', 'Conversión'],
     year: '2024',
     desc: 'Landing page de alta conversión para marca de ropa infantil. Arquitectura centrada en el usuario con diseño emocional que conecta con los padres —navegación simplificada, CTAs estratégicos y flujo de checkout de 3 pasos para reducir el abandono de carrito.',
     img: '',
     localImg: littleCottonCover,
+    siteLink: 'https://littlecottondreams.lovable.app',
+    siteLabel: 'Ir al sitio web',
   },
 ]
 
@@ -178,7 +171,7 @@ function LittleCottonCaseStudy() {
   const imageClass = 'block h-auto w-full'
 
   return (
-    <div className="border-t border-[var(--color-border)] bg-[var(--color-ground)]">
+    <div id="little-cotton-overview" className="scroll-mt-20 border-t border-[var(--color-border)] bg-[var(--color-ground)]">
       <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.8fr_1.2fr]">
         <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
           <span className="mb-5 text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">
@@ -253,7 +246,7 @@ function LittleCottonCaseStudy() {
         </div>
       </div>
 
-      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
+      <div id="little-cotton-conversion" className="scroll-mt-20 grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
         <div className="p-6 md:p-12 lg:p-16">
           <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent-light)]">Flujo de compra</span>
           <h4 className="mt-4 text-2xl tracking-[-0.025em] text-[var(--color-ink)] md:text-3xl">De descubrir a confirmar</h4>
@@ -266,7 +259,7 @@ function LittleCottonCaseStudy() {
         </div>
       </div>
 
-      <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[1.1fr_0.9fr]">
+      <div id="little-cotton-mobile" className="scroll-mt-20 grid border-b border-[var(--color-border)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="order-2 flex items-center justify-center border-t border-[var(--color-border)] bg-[#202020] p-5 md:p-10 lg:order-1 lg:border-r lg:border-t-0">
           <img src={littleCottonWireframes} alt="Wireframes móvil y escritorio de la tienda" className="block h-auto max-h-[48rem] max-w-full" />
         </div>
@@ -340,7 +333,7 @@ function PhysaflowCaseStudy({ prototypeUrl }: { prototypeUrl?: string }) {
   ]
 
   return (
-    <div className="border-t border-[var(--color-border)] bg-[var(--color-ground)]">
+    <div id="physaflow-overview" className="scroll-mt-20 border-t border-[var(--color-border)] bg-[var(--color-ground)]">
       <div className="grid border-b border-[var(--color-border)] lg:grid-cols-[0.72fr_1.28fr]">
         <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
           <span className="mb-5 text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Presentación</span>
@@ -387,7 +380,7 @@ function PhysaflowCaseStudy({ prototypeUrl }: { prototypeUrl?: string }) {
         </div>
       </div>
 
-      <div className="px-6 py-14 md:px-12 md:py-20 lg:px-16">
+      <div id="physaflow-b2b" className="scroll-mt-20 px-6 py-14 md:px-12 md:py-20 lg:px-16">
         <div className="mb-10 grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
           <div>
             <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Research y documentación</span>
@@ -417,7 +410,7 @@ function PhysaflowCaseStudy({ prototypeUrl }: { prototypeUrl?: string }) {
         </div>
       </div>
 
-      <div className="border-t border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
+      <div id="physaflow-dashboard" className="scroll-mt-20 border-t border-[var(--color-border)] px-6 py-14 md:px-12 md:py-20 lg:px-16">
         <div className="mb-10 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
             <span className="text-[10px] uppercase tracking-[0.18em] text-[#c9a445]">Sistema de componentes</span>
@@ -525,6 +518,7 @@ function CustomCursor() {
 export default function App() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [pendingSection, setPendingSection] = useState<string | null>(null)
 
   useEffect(() => {
     const previousRestoration = window.history.scrollRestoration
@@ -555,6 +549,17 @@ export default function App() {
       document.documentElement.style.removeProperty('scroll-behavior')
     }
   }, [])
+
+  useEffect(() => {
+    if (!pendingSection || !activeProject) return
+
+    const timeout = window.setTimeout(() => {
+      document.getElementById(pendingSection)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setPendingSection(null)
+    }, 480)
+
+    return () => window.clearTimeout(timeout)
+  }, [activeProject, pendingSection])
 
   // Marquee items
   const marqueeItems = ['UX / UI', 'DISEÑO DE PRODUCTO', 'INVESTIGACIÓN', 'AUTO LAYOUT', 'PROTOTIPADO', 'UX RESEARCH']
@@ -736,18 +741,7 @@ export default function App() {
                   : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)]'
               }`}
             >
-              <button
-                type="button"
-                onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
-                className="group block w-full bg-[var(--color-surface)] text-left"
-                aria-expanded={activeProject === project.id}
-              >
-                <div className="flex h-8 items-center gap-1.5 border-b border-[var(--color-border)] px-4">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-border-strong)]" />
-                  <span className="ml-auto text-[9px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Archivo {project.id}</span>
-                </div>
+              <div className="group block w-full bg-[var(--color-surface)] text-left">
                 <div className="grid md:grid-cols-[0.72fr_1.28fr]">
                   <div className="relative h-48 overflow-hidden bg-[var(--color-ground)] md:h-60">
                     <img
@@ -764,20 +758,69 @@ export default function App() {
                         <span className="pt-1 text-[10px] text-[var(--color-muted)]">{project.year}</span>
                       </div>
                       <div className="mt-5 flex flex-wrap gap-2">
-                        {project.tags.map(tag => (
-                          <span key={tag} className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
-                            {tag}
-                          </span>
-                        ))}
+                        {project.tags.map(tag => {
+                          const physaflowTargets: Record<string, string> = {
+                            SaaS: 'physaflow-overview',
+                            Dashboard: 'physaflow-dashboard',
+                            B2B: 'physaflow-b2b',
+                          }
+                          const littleCottonTargets: Record<string, string> = {
+                            'E-commerce': 'little-cotton-overview',
+                            Wireframes: 'little-cotton-mobile',
+                            Conversión: 'little-cotton-conversion',
+                          }
+                          const target = project.id === '01'
+                            ? physaflowTargets[tag]
+                            : project.id === '02'
+                              ? littleCottonTargets[tag]
+                              : undefined
+
+                          return target ? (
+                            <button
+                              key={tag}
+                              type="button"
+                              onClick={() => {
+                                setActiveProject(project.id)
+                                setPendingSection(target)
+                              }}
+                              className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)] hover:text-[var(--color-accent-light)]"
+                            >
+                              {tag}
+                            </button>
+                          ) : (
+                            <span key={tag} className="border border-[var(--color-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.1em] text-[var(--color-muted)]">
+                              {tag}
+                            </span>
+                          )
+                        })}
                       </div>
                     </div>
-                    <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
-                      {activeProject === project.id ? 'Cerrar archivo' : 'Abrir proyecto'}
-                      <span aria-hidden="true">{activeProject === project.id ? '−' : '↘'}</span>
-                    </span>
+                    <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+                      <button
+                        type="button"
+                        onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
+                        aria-expanded={activeProject === project.id}
+                        className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-[var(--color-accent-light)] transition-opacity hover:opacity-65"
+                      >
+                        {activeProject === project.id ? 'Cerrar información' : 'Ver cómo lo hice'}
+                        <span aria-hidden="true">{activeProject === project.id ? '−' : '↘'}</span>
+                      </button>
+                      {project.siteLink && (
+                        <motion.a
+                          href={project.siteLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-[10px] uppercase tracking-[0.12em] text-white"
+                          whileHover={{ scale: 1.04, backgroundColor: 'var(--color-accent-light)', color: 'var(--color-ground)' }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          {project.siteLabel ?? 'Ir al sitio web'} <span aria-hidden="true">↗</span>
+                        </motion.a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </button>
+              </div>
 
               <AnimatePresence initial={false}>
                 {activeProject === project.id && (
@@ -802,9 +845,9 @@ export default function App() {
                       </button>
                     </div>
 
-                    {project.id === '03' ? (
+                    {project.id === '02' ? (
                       <LittleCottonCaseStudy />
-                    ) : project.id === '02' ? (
+                    ) : project.id === '01' ? (
                       <PhysaflowCaseStudy prototypeUrl={project.link} />
                     ) : (
                       <div className="grid border-t border-[var(--color-border)] bg-[var(--color-surface)] md:grid-cols-2">
@@ -856,18 +899,18 @@ export default function App() {
                 Hola, soy Javiana Altuve.
               </h2>
               <p className="mt-5 text-sm tracking-[0.02em] text-[var(--color-accent-light)] md:text-base">
-                Diseñadora UX/UI <span className="text-[var(--color-muted)]">|</span> Experiencias digitales centradas en las personas.
+                Diseñadora UX/UI enfocada en crear productos digitales claros, funcionales y listos para escalar en B2B SaaS y E-commerce.
               </p>
               <span className="my-8 block h-px w-16 bg-[var(--color-accent)]" />
               <div className="max-w-xl space-y-6">
                 <p className="text-lg leading-relaxed text-[var(--color-ink-soft)]">
-                  Diseño experiencias digitales que convierten necesidades reales en productos claros, intuitivos y visualmente atractivos.
+                  Resuelvo problemas de negocio y de usuario convirtiendo necesidades reales en productos digitales claros, funcionales y fáciles de usar.
                 </p>
                 <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
-                  Me interesa comprender a las personas, identificar oportunidades y transformar problemas complejos en soluciones sencillas. Combino pensamiento estratégico, creatividad y sensibilidad visual para desarrollar experiencias digitales e identidades visuales que conectan con las personas y aportan valor a las marcas.
+                  Mi enfoque parte de investigar a las personas para detectar dónde se traban, qué necesitan y qué oportunidades existen. A partir de ahí, traduzco procesos complejos en flujos intuitivos e interfaces ordenadas que facilitan la toma de decisiones y mejoran la conversión.
                 </p>
                 <p className="text-[15px] leading-relaxed text-[var(--color-muted)]">
-                  Disfruto transformar ideas en propuestas visuales que transmitan identidad, claridad y propósito.
+                  Combino análisis, estructura y criterio visual para diseñar soluciones que funcionan tanto para quien las usa como para el equipo que las construye.
                 </p>
               </div>
               <a
